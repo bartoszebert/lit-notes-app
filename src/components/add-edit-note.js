@@ -1,6 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { defaultStyles } from "../styles/default-style.js";
 import { addEditStyles } from "../styles/add-edit-note-style.js";
+import { formatDate } from "./utils/format-date.js";
 import "./ui/input-field.js";
 import "./ui/textarea-field.js";
 import "./ui/button-element.js";
@@ -18,7 +19,7 @@ class AddEditNote extends LitElement {
 
   constructor() {
     super();
-    this.note = { title: "", content: "" };
+    this.note = { title: "", content: "", date: "" };
     this.show = false;
     this.errorTitle = false;
     this.errorContent = false;
@@ -86,8 +87,11 @@ class AddEditNote extends LitElement {
 
     if (this.errorTitle || this.errorContent) return;
 
+    const formattedDate = formatDate(new Date());
     this.dispatchEvent(
-      new CustomEvent("save-note", { detail: { note: this.note } })
+      new CustomEvent("save-note", {
+        detail: { note: { ...this.note, date: formattedDate } },
+      })
     );
   }
 }
