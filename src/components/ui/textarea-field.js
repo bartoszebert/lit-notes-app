@@ -24,7 +24,7 @@ class TextareaField extends LitElement {
           .value="${this.value}"
           @input="${this._onInput}"
         ></textarea>
-        <slot></slot>
+        <slot name="button"></slot>
       </div>
     `;
   }
