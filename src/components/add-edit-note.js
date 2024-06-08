@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html } from "lit";
 import { defaultStyles } from "../styles/default-style.js";
 import { addEditStyles } from "../styles/add-edit-note-style.js";
 import { formatDate } from "./utils/format-date.js";
