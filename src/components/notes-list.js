@@ -38,7 +38,7 @@ class NotesList extends LitElement {
           ? html`
               <no-notes
                 @add-note="${this._addNote}"
-                .isAllListEmpty="${!Boolean(this.allNotes.length)}"
+                .isAllListEmpty="${this.allNotes.length === 0}"
               >
               </no-notes>
             `

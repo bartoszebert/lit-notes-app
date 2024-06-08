@@ -59,7 +59,7 @@ class AddEditNote extends LitElement {
             type="primary"
             label="${this.note?.id ? "Save" : "Add"}"
             className="btn-absolute-right"
-            label="button"
+            slot="button"
           ></button-element>
         </textarea-field>
         <error-message

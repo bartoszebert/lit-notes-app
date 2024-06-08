@@ -20,6 +20,5 @@ module.exports = {
     babelPlugin(babelConfig),
   ],
   browsers: [playwrightLauncher({ product: "chromium" })],
-  coverage: true,
-  testsFinishTimeout: 10000
+  coverage: true
 };

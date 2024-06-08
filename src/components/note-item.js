@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html } from "lit";
 import { defaultStyles } from "../styles/default-style";
 import { noteItemStyles } from "../styles/note-item-style";
 import "./ui/button-element";

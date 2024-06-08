@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html } from "lit";
 import { defaultStyles } from "../styles/default-style";
 import { deleteModaStyles } from "../styles/delete-modal-style";
 import "./ui/button-element";

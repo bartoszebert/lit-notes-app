@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit-element";
+import { LitElement, html } from "lit";
 import { defaultStyles } from "../styles/default-style";
 import "./ui/button-element";
 import { noNotesStyles } from "../styles/no-notes-style";
@@ -7,24 +7,24 @@ class NoNotes extends LitElement {
   static styles = [defaultStyles, noNotesStyles];
 
   static properties = {
-    isListEmpty: { type: Boolean },
+    isAllListEmpty: { type: Boolean },
   };
 
   constructor() {
     super();
-    this.isListEmpty = true;
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
+    this.isAllListEmpty = true;
   }
 
   render() {
     return html`
       <div id="no-notes-message">
         <img src="./icons/info.svg" alt="" />
-        <h2>${this.isAllListEmpty ? 'No notes yet' : 'No results found'}</h2>
-        <p>${this.isAllListEmpty ? 'Add a note to keep track of your learnings.' : ''}</p>
+        <h2>${this.isAllListEmpty ? "No notes yet" : "No results found"}</h2>
+        <p>
+          ${this.isAllListEmpty
+            ? "Add a note to keep track of your learnings."
+            : ""}
+        </p>
         ${this.isAllListEmpty
           ? html`
               <button-element
@@ -33,7 +33,8 @@ class NoNotes extends LitElement {
                 label="Add new note"
                 className="btn-secondary-add"
                 style="justify-content: center;"
-              ></button-element>
+              >
+              </button-element>
             `
           : ""}
       </div>

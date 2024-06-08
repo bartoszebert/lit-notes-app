@@ -1,4 +1,4 @@
-import { LitElement, css, html } from "lit";
+import { LitElement, html } from "lit";
 import "./components/add-edit-note.js";
 import "./components/notes-list.js";
 import "./components/ui/button-element.js";

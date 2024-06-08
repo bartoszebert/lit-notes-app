@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit";
+import { LitElement, html } from "lit";
 import { defaultStyles } from "../../styles/default-style";
 import { inputFieldStyles } from "../../styles/ui/input-field-style";
 
