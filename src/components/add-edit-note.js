@@ -71,14 +71,18 @@ class AddEditNote extends LitElement {
   }
 
   _updateTitle(e) {
+    if (this.errorTitle) this.errorTitle = false;
     this.note = { ...this.note, title: e.detail.value };
   }
 
   _updateContent(e) {
+    if (this.errorContent) this.errorContent = false;
     this.note = { ...this.note, content: e.detail.value };
   }
 
   _cancel() {
+    this.errorTitle = false;
+    this.errorContent = false;
     this.dispatchEvent(new CustomEvent("cancel-edit"));
   }
 
