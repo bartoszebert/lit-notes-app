@@ -12,8 +12,8 @@ class DeleteModal extends LitElement {
 
   render() {
     return html`
-      <div class="modal" style="display: ${this.show ? "flex" : "none"}">
-        <div class="modal-content">
+      <div class="modal" style="display: ${this.show ? "flex" : "none"}" @click="${this._cancelDelete}">
+        <div class="modal-content" @click="${this._stopPropagation}">
           <h2>Delete modal</h2>
           <p>Are you sure you want to delete this note?</p>
           <div class="modal-actions">
@@ -36,6 +36,10 @@ class DeleteModal extends LitElement {
         </div>
       </div>
     `;
+  }
+
+  _stopPropagation(e) {
+    e.stopPropagation();
   }
 
   _cancelDelete() {
