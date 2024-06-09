@@ -2,6 +2,7 @@ import { LitElement, html } from "lit";
 import { defaultStyles } from "../styles/default-style";
 import { noteItemStyles } from "../styles/note-item-style";
 import "./ui/button-element";
+import { truncateText } from "./utils/truncate-text";
 
 class NoteItem extends LitElement {
   static styles = [defaultStyles, noteItemStyles];
@@ -14,7 +15,7 @@ class NoteItem extends LitElement {
     return html`
       <li class="note">
         <div class="note-header">
-          <h3 class="note-title">${this.note.title}</h3>
+          <h3 class="note-title">${truncateText(this.note.title, 60)}</h3>
           <div class="note-actions">
             <button-element type="action" @click="${this._editNote}">
               <img slot="icon" src="./icons/edit.svg" alt="Edit note" />
@@ -24,7 +25,7 @@ class NoteItem extends LitElement {
             </button-element>
           </div>
         </div>
-        <p class="note-content">${this.note.content}</p>
+        <p class="note-content">${truncateText(this.note.content, 200)}</p>
         <div class="note-date">${this.note.date}</div>
       </li>
     `;

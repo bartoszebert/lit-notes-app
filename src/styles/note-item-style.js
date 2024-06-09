@@ -1,6 +1,10 @@
 import { css } from "lit";
 
 export const noteItemStyles = css`
+  h3,
+  p {
+    overflow-wrap: break-word;
+  }
   .note {
     display: flex;
     flex-direction: column;
