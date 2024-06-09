@@ -6,6 +6,7 @@ import "./ui/input-field.js";
 import "./ui/textarea-field.js";
 import "./ui/button-element.js";
 import "./ui/error-message.js";
+import { ariaLabels } from "./utils/aria-labels.js";
 
 class AddEditNote extends LitElement {
   static styles = [defaultStyles, addEditStyles];
@@ -38,21 +39,25 @@ class AddEditNote extends LitElement {
             type="cancel"
             label="Cancel"
             className="btn-cancel"
+            aria-label="${ariaLabels.cancelEdit}"
           ></button-element>
         </div>
         <input-field
           placeholder="Title"
           .value="${this.note?.title}"
           @input-change="${this._updateTitle}"
+          aria-label="${ariaLabels.title}"
         ></input-field>
         <error-message
           message="Title field cannot be empty."
           .visible="${this.errorTitle}"
+          aria-label="${ariaLabels.errorTitle}"
         ></error-message>
         <textarea-field
           placeholder="Write your note here..."
           .value="${this.note?.content}"
           @input-change="${this._updateContent}"
+          aria-label="${ariaLabels.content}"
         >
           <button-element
             @click="${this._saveNote}"
@@ -60,11 +65,13 @@ class AddEditNote extends LitElement {
             label="${this.note?.id ? "Save" : "Add"}"
             className="btn-absolute-right"
             slot="button"
+            aria-label="${ariaLabels.saveNote}"
           ></button-element>
         </textarea-field>
         <error-message
           message="Content field cannot be empty."
           .visible="${this.errorContent}"
+          aria-label="${ariaLabels.errorContent}"
         ></error-message>
       </div>
     `;

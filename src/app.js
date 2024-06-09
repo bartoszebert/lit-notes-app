@@ -6,6 +6,7 @@ import "./components/ui/input-field.js";
 import { defaultStyles } from "./styles/default-style.js";
 import { appStyles } from "./styles/app-style.js";
 import "./components/delete-modal.js";
+import { ariaLabels } from "./components/utils/aria-labels.js";
 
 class AppRoot extends LitElement {
   static styles = [defaultStyles, appStyles];
@@ -31,7 +32,7 @@ class AppRoot extends LitElement {
 
   render() {
     return html`<div class="app">
-      <header>
+      <header aria-label="${ariaLabels.header}">
         <img src="./icons/notes.svg" alt="" />
         <h1>Notes</h1>
       </header>
@@ -40,6 +41,7 @@ class AppRoot extends LitElement {
           <input-field
             placeholder="Search notes..."
             @input-change="${this._updateSearchQuery}"
+            aria-label="${ariaLabels.searchNotes}"
           ></input-field>
           ${this.notes.length > 0 && !this.showAddEditNote
             ? html` <button-element
@@ -47,6 +49,7 @@ class AppRoot extends LitElement {
                 type="primary"
                 label="Add new"
                 className="w-100"
+                aria-label="${ariaLabels.addNewNoteButton}"
               ></button-element>`
             : ""}
         </section>
@@ -72,6 +75,7 @@ class AppRoot extends LitElement {
         ?show="${this.showDeleteModal}"
         @confirm-delete="${this._confirmDeleteNote}"
         @cancel-delete="${this._hideDeleteModal}"
+        aria-label="${ariaLabels.deleteNote}"
       ></delete-modal>
     </div>`;
   }

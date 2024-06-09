@@ -1,0 +1,17 @@
+export const ariaLabels = {
+  header: "Header",
+  noteItem: "Note item",
+  editNote: "Edit note",
+  deleteNote: "Delete note",
+  infoIcon: "Information",
+  addNewNoteButton: "Add new note",
+  searchNotes: "Search notes",
+  cancelDelete: "Cancel deleting note",
+  cancelEdit: "Cancel editing or adding a note",
+  title: "Note title",
+  content: "Note content",
+  errorTitle: "Error message for note title",
+  errorContent: "Error message for note content",
+  saveNote: "Save note",
+  noNotes: "No notes",
+};

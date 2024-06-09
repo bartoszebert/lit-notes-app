@@ -3,6 +3,7 @@ import { defaultStyles } from "../styles/default-style.js";
 import { notesListStyles } from "../styles/notes-list-style.js";
 import "./note-item.js";
 import "./no-notes.js";
+import { ariaLabels } from "./utils/aria-labels.js";
 
 class NotesList extends LitElement {
   static styles = [defaultStyles, notesListStyles];
@@ -30,6 +31,7 @@ class NotesList extends LitElement {
                 .note="${note}"
                 @edit-note="${this._editNote}"
                 @delete-note="${this._deleteNote}"
+                aria-label="${ariaLabels.noteItem}"
               ></note-item>
             `
           )}
@@ -39,6 +41,7 @@ class NotesList extends LitElement {
               <no-notes
                 @add-note="${this._addNote}"
                 .isAllListEmpty="${this.allNotes.length === 0}"
+                aria-label="${ariaLabels.noNotes}"
               >
               </no-notes>
             `

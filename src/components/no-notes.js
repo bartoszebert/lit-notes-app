@@ -2,6 +2,7 @@ import { LitElement, html } from "lit";
 import { defaultStyles } from "../styles/default-style";
 import "./ui/button-element";
 import { noNotesStyles } from "../styles/no-notes-style";
+import { ariaLabels } from "./utils/aria-labels";
 
 class NoNotes extends LitElement {
   static styles = [defaultStyles, noNotesStyles];
@@ -18,7 +19,11 @@ class NoNotes extends LitElement {
   render() {
     return html`
       <div id="no-notes-message">
-        <img src="./icons/info.svg" alt="" />
+        <img
+          src="./icons/info.svg"
+          alt=""
+          aria-label="${ariaLabels.infoIcon}"
+        />
         <h2>${this.isAllListEmpty ? "No notes yet" : "No results found"}</h2>
         <p>
           ${this.isAllListEmpty
@@ -33,6 +38,7 @@ class NoNotes extends LitElement {
                 label="Add new note"
                 className="btn-secondary-add"
                 style="justify-content: center;"
+                aria-label="${ariaLabels.addNewNoteButton}"
               >
               </button-element>
             `

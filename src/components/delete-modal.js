@@ -2,6 +2,7 @@ import { LitElement, html } from "lit";
 import { defaultStyles } from "../styles/default-style";
 import { deleteModaStyles } from "../styles/delete-modal-style";
 import "./ui/button-element";
+import { ariaLabels } from "./utils/aria-labels";
 
 class DeleteModal extends LitElement {
   static styles = [defaultStyles, deleteModaStyles];
@@ -22,6 +23,7 @@ class DeleteModal extends LitElement {
               @click="${this._cancelDelete}"
               label="Cancel"
               className="btn-flex-1"
+              aria-label="${ariaLabels.cancelDelete}"
             >
             </button-element>
             <button-element
@@ -30,6 +32,7 @@ class DeleteModal extends LitElement {
               label="Delete"
               className="btn-flex-1"
               style="display: flex;"
+              aria-label="${ariaLabels.deleteNote}"
             >
             </button-element>
           </div>

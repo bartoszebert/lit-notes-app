@@ -1,8 +1,9 @@
 import { LitElement, html } from "lit";
 import { defaultStyles } from "../styles/default-style";
 import { noteItemStyles } from "../styles/note-item-style";
-import "./ui/button-element";
 import { truncateText } from "./utils/truncate-text";
+import { ariaLabels } from "./utils/aria-labels";
+import "./ui/button-element";
 
 class NoteItem extends LitElement {
   static styles = [defaultStyles, noteItemStyles];
@@ -13,14 +14,22 @@ class NoteItem extends LitElement {
 
   render() {
     return html`
-      <li class="note">
+      <li class="note" aria-label="${ariaLabels.noteItem}">
         <div class="note-header">
           <h3 class="note-title">${truncateText(this.note.title, 60)}</h3>
           <div class="note-actions">
-            <button-element type="action" @click="${this._editNote}">
+            <button-element
+              type="action"
+              @click="${this._editNote}"
+              aria-label="${ariaLabels.editNote}"
+            >
               <img slot="icon" src="./icons/edit.svg" alt="Edit note" />
             </button-element>
-            <button-element type="action" @click="${this._deleteNote}">
+            <button-element
+              type="action"
+              @click="${this._deleteNote}"
+              aria-label="${ariaLabels.deleteNote}"
+            >
               <img slot="icon" src="../icons/delete.svg" alt="Delete note" />
             </button-element>
           </div>
