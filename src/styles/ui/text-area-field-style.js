@@ -27,7 +27,7 @@ export const textAreaFieldStyles = css`
     height: 100%;
     position: absolute;
     background-color: var(--input-default-bg);
-    border-radius: 12px;
+    border-radius: 0.75rem;
     border: 1px solid var(--input-default-bg);
     font-size: 1rem;
     font-weight: 400;

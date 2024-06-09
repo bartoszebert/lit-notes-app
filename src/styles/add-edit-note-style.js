@@ -7,7 +7,7 @@ export const addEditStyles = css`
     box-shadow: 0px 0px 16px 0px #00000014;
     margin: 0 -1rem;
     padding: 0.5rem 1rem 1rem;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     background-color: var(--white);
   }
 

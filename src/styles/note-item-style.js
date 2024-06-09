@@ -9,7 +9,7 @@ export const noteItemStyles = css`
     display: flex;
     flex-direction: column;
     box-shadow: 0px 4px 12px 0px #00000012;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     padding: 0.5rem 1rem 1rem;
     background-color: var(--white);
   }

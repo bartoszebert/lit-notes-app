@@ -13,7 +13,7 @@ export const appStyles = css`
 
   header {
     flex-direction: row;
-    gap: 10px;
+    gap: 0.625rem;
     margin: 0.5rem 0;
     padding: 1rem;
     align-items: center;

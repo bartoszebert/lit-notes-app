@@ -19,7 +19,7 @@ export const deleteModaStyles = css`
     background: var(--white);
     width: 100%;
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 0.75rem;
   }
 
   .modal-actions {

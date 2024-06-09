@@ -4,7 +4,7 @@ export const inputFieldStyles = css`
   .input-field {
     width: 100%;
     background-color: var(--input-default-bg);
-    border-radius: 12px;
+    border-radius: 0.75rem;
     border: 1px solid var(--input-default-bg);
     font-size: 1rem;
     font-weight: 400;
@@ -20,7 +20,7 @@ export const inputFieldStyles = css`
     background-color: var(--white);
     border: 1px solid var(--dark);
   }
-  
+
   input:active,
   input:focus {
     -webkit-tap-highlight-color: transparent;

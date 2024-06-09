@@ -11,7 +11,7 @@ export const buttonStyles = css`
   .btn {
     background: transparent;
     border: none;
-    border-radius: 12px;
+    border-radius: 0.75rem;
     font-size: 1rem;
     height: 40px;
     cursor: pointer;
@@ -92,7 +92,7 @@ export const buttonStyles = css`
     flex: 1;
   }
 
-  .w-100{
+  .w-100 {
     width: 100%;
   }
 `;
